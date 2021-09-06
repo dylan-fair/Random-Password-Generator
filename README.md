@@ -13,4 +13,4 @@ specific lenghth and which charaters to include.
 https://dylan-fair.github.io/Random-Password-Generator/
 
 ## Screen Shot
-![alt text](./develop/screenshot)
+![alt text](./develop/screenshot.PNG)
