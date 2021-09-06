@@ -1,13 +1,15 @@
 // Assignment code here
 var groups = ["abcdefghijklmnopqrstuvwxy","ABCDEFGHIJKLMNOPQRSTUVWXYZ","1234567890","!#$%&'()*,-./:;<=>?@[/]^_{|}~`"]
-var check = {
-  lower: false,
-  upper: false,
-  num: false,
-  special: false
-}
-totalElements = "";
+
 var generatePassword = function() {
+  var totalElements = "";
+  var finalPassword = "";
+  var check = {
+    lower: false,
+    upper: false,
+    num: false,
+    special: false
+  }
   passwordLength = 0;
   while (passwordLength < 8 || passwordLength > 128) {
     passwordLength = window.prompt("how long would you like your password? between 8 and 128");
@@ -23,14 +25,16 @@ var generatePassword = function() {
   }
   var i = 0;
   for (key in check) {
-    console.log(groups[i]);
     if (check[key]) {
       totalElements = totalElements + groups[i];
     }
     i = i +1;
   }
+  for (var x = 0, n = totalElements.length; x < passwordLength; x++) {
+    finalPassword = finalPassword + totalElements.charAt(Math.floor(Math.random()* n));
+  }
+  window.alert(finalPassword);
 }
-console.log(totalElements);
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
