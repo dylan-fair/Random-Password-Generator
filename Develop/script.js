@@ -33,7 +33,7 @@ var generatePassword = function() {
   for (var x = 0, n = totalElements.length; x < passwordLength; x++) {
     finalPassword = finalPassword + totalElements.charAt(Math.floor(Math.random()* n));
   }
-  window.alert(finalPassword);
+  return finalPassword;
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
